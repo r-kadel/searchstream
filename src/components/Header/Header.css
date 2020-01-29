@@ -1,0 +1,23 @@
+.navbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: darkgrey;
+  height: 4rem;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: inline;
+  
+}
+
+.nav-links > li {
+  display: inline;
+  margin-right: 2rem;
+}
+
+.logo {
+  align-self: center;
+  margin-right: auto;
+  margin-left: 2rem;
+}
