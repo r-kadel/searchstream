@@ -1,6 +1,7 @@
 .footer {
-  text-align: center;
   background-color: darkgrey;
   height: 4rem;
-  
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

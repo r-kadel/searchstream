@@ -1,0 +1,16 @@
+.content {
+  min-height: calc(100vh - 8rem);
+}
+
+.landing-page {
+  text-align: center;
+  padding: 3rem;
+}
+
+#landing-page-btn {
+  font-size: 1.125rem;
+}
+
+#landing-page-btn:hover {
+  background-color: #BADA55;
+}
