@@ -19,8 +19,8 @@ function Home() {
   }
 
   const results = searchResults.map(result => (
-        <Result key={result.id} data={result} />
-      ))
+        <Result key={result.id} data={result} /> 
+        ))
 
   return (
     <main className="content">

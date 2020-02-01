@@ -7,7 +7,7 @@ function Result(props) {
     <>
       <img className="poster" src={props.data.picture} alt="Movie Poster"/>
       <h3>{props.data.name}</h3>
-      <h4>{props.data.locations.map(loc => loc.name)}</h4>
+      <h4>{props.data.locations.map(loc => loc.display_name)}</h4>
     </>
   )
 }
