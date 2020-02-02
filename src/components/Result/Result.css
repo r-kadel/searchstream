@@ -1,3 +1,54 @@
 .poster {
-  max-width: 150px;
+  max-width: 50%;
+  align-self: center;
+}
+
+.result-item {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.result-details {
+  text-align: center;
+}
+
+.icons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: .6rem;
+  margin-bottom: .6rem;
+}
+
+.provider-icon {
+  max-width: 80px;
+  margin-right: .5rem;
+}
+
+.result-title {
+  margin: .5rem;
+}
+
+h6 {
+  margin: .2rem;
+}
+
+@media screen and (min-width: 420px) {
+  .provider-icon {
+    max-width: 85px;
+  }
+  .poster {
+    min-height: 80%;
+    min-width: 100%;
+  }
+  .result-item {
+    width: 100%;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: 1fr 3fr;
+  }
+  .icons {
+    margin-top: 1rem;
+  }
 }

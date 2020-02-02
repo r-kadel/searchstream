@@ -2,7 +2,7 @@
   display: flex;
   justify-content: flex-start;
   background-color: darkgrey;
-  height: 4rem;
+  height: 3.25rem;
   align-items: center;
 }
 
@@ -14,10 +14,19 @@
 
 .nav-links > li {
   display: inline;
-  margin-right: 2rem;
+  margin-right: .8rem;
 }
 
 .logo {
   margin-right: auto;
-  margin-left: 2rem;
+  margin-left: .4rem;
+}
+
+@media screen and (min-width: 420px) {
+  .logo {
+    margin-left: 2rem;
+  }
+  .nav-links > li {
+    margin-right: 2rem;
+  }
 }

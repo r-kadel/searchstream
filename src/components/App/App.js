@@ -10,6 +10,7 @@ import LandingPage from '../../pages/Landing/LandingPage'
 import Register from '../../pages/Register/Register'
 import Catalogue from '../../pages/Catalogue/Catalogue'
 import Details from '../../pages/Details/Details'
+import Login from '../../pages/Login/Login'
 
 
 function App() {
@@ -23,16 +24,19 @@ function App() {
         <Route exact path='/'>
           <LandingPage />
         </Route>
-        <Route path="/home">
+        <Route exact path="/search">
           <Home />
         </Route>
         <Route path='/register'>
           <Register />
         </Route>
+        <Route path='/login'>
+          <Login />
+        </Route>
         <Route path='/catalogue'>
           <Catalogue />
         </Route>
-        <Route path='/details'>
+        <Route path='/search/:searchId'>
           <Details />
         </Route>
 

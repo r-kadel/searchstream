@@ -1,11 +1,18 @@
 import React, { useState } from 'react'
-import config from './config'
 
 const Context = React.createContext()
 
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
+
+  function logIn() {
+    setLoggedIn(true)
+  }
+
+  function logOut() {
+    setLoggedIn(false)
+  }
 
   function getSearchResults(searchTerm) {
     const request = async () => {
@@ -14,20 +21,21 @@ function ContextProvider(props) {
         {
           method: 'GET',
           headers: {
-            'x-rapidapi-key': config.API_KEY,
+            'x-rapidapi-key': process.env.REACT_APP_API_KEY,
             'Content-Type': 'application/json'
           }
         }
       )
         const json = await response.json()
-        
+          
         setSearchResults(json.results)
+  
     }
     request()
   }
 
   return (
-    <Context.Provider value={{ searchResults, getSearchResults }}>
+    <Context.Provider value={{ searchResults, getSearchResults, loggedIn, logIn, logOut }}>
       {props.children}
     </Context.Provider>
   )

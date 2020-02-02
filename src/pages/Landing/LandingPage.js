@@ -11,7 +11,7 @@ function LandingPage() {
         SearchStream was designed for you to quickly locate the content you want, withought
         all the clutter of a traditional google search.
       </p>
-      <Link to='/home'>
+      <Link to='/search'>
         <button id="landing-page-btn">Try it out!</button>     
       </Link>
     </div>

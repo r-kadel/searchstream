@@ -1,0 +1,24 @@
+.login-form {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.login-form > label {
+  margin-top: .3em;
+  margin-bottom: .3em;
+}
+
+.login-form > input {
+  font-size: 1rem;
+}
+
+.login-btn {
+  margin-top: 1.5rem;
+  width: 100px;
+  align-self: center;
+}
+
+.login-btn:hover {
+  background-color: #BADA55;
+}

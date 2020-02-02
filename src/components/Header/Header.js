@@ -1,8 +1,15 @@
-import React from "react"
-import { Link } from "react-router-dom"
-import "./Header.css"
+import React, { useContext } from 'react'
+import { Link } from 'react-router-dom'
+import './Header.css'
+import { Context } from '../../Context'
 
 function Header() {
+  const { loggedIn, logOut } = useContext(Context)
+  
+  function handleLogOut() {
+    logOut()
+  }
+
   return (
     <nav className="navbar">
       <i className="logo">
@@ -12,9 +19,20 @@ function Header() {
         <li>
           <Link to="/register">Register</Link>
         </li>
-        <li>Login</li>
+        {!loggedIn && (
+          <li>
+            <Link to="/login">Login</Link>
+          </li>
+        )}
+        {loggedIn && (
+          <li onClick={handleLogOut}>
+            <Link to="/">
+              Log Out
+            </Link>
+          </li>
+        )}
         <li>
-          <Link to="/home">Demo</Link>
+          <Link to="/search">Demo</Link>
         </li>
       </ul>
     </nav>
