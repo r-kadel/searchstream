@@ -14,11 +14,11 @@ function Register() {
     <main className='content'>
         <form className="regis-form" onSubmit={handleSubmit}> 
           <label htmlFor="username">Username:</label>
-            <input type="text" />
+            <input type="text" required />
           <label htmlFor="password">Password</label>
-            <input type="password" />
+            <input type="password" required />
           <label htmlFor="email">Email:</label>
-            <input type="email" />
+            <input type="email" required />
           <button className="regis-btn">Submit</button>
         </form>
     </main>

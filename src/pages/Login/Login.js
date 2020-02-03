@@ -17,9 +17,9 @@ function Login() {
     <main className='content'>
         <form className="login-form" onSubmit={handleSubmit}> 
           <label htmlFor="username">Username:</label>
-            <input type="text" />
+            <input type="text" required />
           <label htmlFor="password">Password</label>
-            <input type="password" />
+            <input type="password" required />
           <button className="login-btn">Submit</button>
         </form>
     </main>
