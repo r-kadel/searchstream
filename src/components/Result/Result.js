@@ -3,10 +3,16 @@ import './Result.css'
 import {Link} from 'react-router-dom'
 
 function Result(props) {
+
   const providerIcons = props.data.locations.map(loc => {
-    return (
-      <img key={loc.id} className="provider-icon" src={loc.icon} alt= {loc.display_name} />
-    )
+      return (
+        <img 
+          src={loc.icon}
+          key={loc.id}
+          className="provider-icon"
+          alt={loc.display_name}
+        />
+      )
   })
 
   return (
