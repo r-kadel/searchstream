@@ -10,7 +10,7 @@ function ContextProvider(props) {
     setLoggedIn(true)
   }
 
-  function logOut() {
+  function logOut() { 
     setLoggedIn(false)
   }
 
@@ -26,10 +26,8 @@ function ContextProvider(props) {
           }
         }
       )
-        const json = await response.json()
-          
+        const json = await response.json()   
         setSearchResults(json.results)
-  
     }
     request()
   }

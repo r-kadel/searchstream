@@ -6,9 +6,15 @@ import './Details.css'
 function Details() {
   const { searchResults } = useContext(Context)
   const params = useParams()
+  let movie = {}
 
-  const movie = searchResults.filter(result => result.id === params.searchId)
-  const providerIcons = movie[0].locations.map(loc => {
+  searchResults.forEach(result => {
+    if(result.id === params.searchId) {
+      movie = result
+    } 
+  })
+
+  const providerIcons = movie.locations.map(loc => {
     return (
       <img key={loc.id} className="provider-icon" src={loc.icon} alt= {loc.display_name} />
     )
@@ -17,8 +23,8 @@ function Details() {
   return (
     <main className="content">
       <div className="detail-container">
-        <img className="details-poster" src={movie[0].picture} alt={movie[0].name} />
-        <h1>{movie[0].name}</h1>
+        <img className="details-poster" src={movie.picture} alt={movie.name} />
+        <h1>{movie.name}</h1>
         <h6>Availble Here:</h6>
         {providerIcons}
       </div>
