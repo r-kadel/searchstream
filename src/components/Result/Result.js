@@ -1,24 +1,23 @@
 import React from 'react'
 import './Result.css'
-import {Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 function Result(props) {
-
   const providerIcons = props.data.locations.map(loc => {
-      return (
-        <img 
-          src={loc.icon}
-          key={loc.id}
-          className="provider-icon"
-          alt={loc.display_name}
-        />
-      )
+    return (
+      <img
+        src={loc.icon}
+        key={loc.id}
+        className="provider-icon"
+        alt={loc.display_name}
+      />
+    )
   })
 
   return (
     <article className="result-item">
       <Link to={`/search/${props.data.id}`}>
-        <img className="poster" src={props.data.picture} alt="Movie Poster"/>  
+        <img className="poster" src={props.data.picture} alt="Movie Poster" />
       </Link>
       <section className="result-details">
         <Link to={`/search/${props.data.id}`}>
