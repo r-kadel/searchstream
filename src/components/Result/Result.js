@@ -10,10 +10,11 @@ function Result(props) {
         key={loc.id}
         className="provider-icon"
         alt={loc.display_name}
+        onError={(e) => e.target.style.display = "none"}
       />
     )
   })
-
+  console.log(props)
   return (
     <article className="result-item">
       <Link to={`/search/${props.data.id}`}>

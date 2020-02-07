@@ -13,7 +13,7 @@ function Details() {
       movie = result
     } 
   })
-
+  console.log(movie)
   const providerIcons = movie.locations.map(loc => {
     return (
       <img key={loc.id} className="provider-icon" src={loc.icon} alt= {loc.display_name} />
