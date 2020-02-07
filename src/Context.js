@@ -17,7 +17,7 @@ function ContextProvider(props) {
   function getSearchResults(searchTerm) {
     const request = async () => {
       const response = await fetch(
-        `https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?term=${searchTerm}`,
+        `https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?country=us&term=${searchTerm}`,
         {
           method: 'GET',
           headers: {

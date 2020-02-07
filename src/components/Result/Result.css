@@ -1,6 +1,7 @@
 .poster {
   max-width: 50%;
   align-self: center;
+  max-height: 90%;
 }
 
 .result-item {
@@ -23,7 +24,9 @@
 
 .provider-icon {
   max-width: 80px;
+  max-height: 40px;
   margin-right: .5rem;
+  margin-left: .5rem;
 }
 
 img[src="Error.src"] { display: none; }
