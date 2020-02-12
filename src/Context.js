@@ -14,22 +14,10 @@ function ContextProvider(props) {
     setLoggedIn(false)
   }
 
-  function getSearchResults(searchTerm) {
-    const request = async () => {
-      const response = await fetch(
-        `https://utelly-tv-shows-and-movies-availability-v1.p.rapidapi.com/lookup?country=us&term=${searchTerm}`,
-        {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-key': process.env.REACT_APP_API_KEY,
-            'Content-Type': 'application/json'
-          }
-        }
-      )
-        const json = await response.json()   
-        setSearchResults(json.results)
-    }
-    request()
+  function getSearchResults(searchTerm){
+    fetch(`${process.env.REACT_APP_API_BASE_URL}/${searchTerm}`)
+      .then(res => res.json())
+      .then(resJson => setSearchResults(resJson.results))
   }
 
   return (

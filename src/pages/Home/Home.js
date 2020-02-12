@@ -42,7 +42,7 @@ function Home() {
           </form>
         </section>
 
-        <section className="results-section">{results}</section>
+        <section className="results-section">{results}</section> 
       </main>
     </SearchError>
   )
