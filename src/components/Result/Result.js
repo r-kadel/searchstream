@@ -14,7 +14,7 @@ function Result(props) {
       />
     )
   })
-  console.log(props)
+
   return (
     <article className="result-item">
       <Link to={`/search/${props.data.id}`}>
