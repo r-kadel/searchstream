@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 const Context = React.createContext()
+const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://calm-cliffs-26137.herokuapp.com/api/search'
 
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])
@@ -15,7 +16,7 @@ function ContextProvider(props) {
   }
 
   function getSearchResults(searchTerm){
-    fetch(`${process.env.REACT_APP_API_BASE_URL}/${searchTerm}`)
+    fetch(`${BASE_URL}/${searchTerm}`)
       .then(res => res.json())
       .then(resJson => setSearchResults(resJson.results))
   }
