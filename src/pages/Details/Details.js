@@ -24,7 +24,7 @@ function Details() {
       <div className="detail-container">
         <img className="details-poster" src={movie.picture} alt={movie.name} />
         <h1>{movie.name}</h1>
-        <h6>Availble Here:</h6>
+        <h6>Available Here:</h6>
         {providerIcons}
       </div>
     </main>

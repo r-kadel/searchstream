@@ -24,7 +24,7 @@ function Result(props) {
         <Link to={`/search/${props.data.id}`}>
           <h3 className="result-title">{props.data.name}</h3>
         </Link>
-        <h6>Availble Here:</h6>
+        <h6>Available Here:</h6>
         <p className="icons">{providerIcons}</p>
       </section>
     </article>
