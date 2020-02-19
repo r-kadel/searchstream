@@ -1,3 +1,8 @@
+.content {
+    background-color: #0D0106;
+    color: #F4FAFF;
+}
+
 .search-wrapper {
     padding: 2rem;
     display: flex;
@@ -13,7 +18,8 @@
 
 .results-section {
     padding: 1rem;
-    display: grid;
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
 
@@ -21,11 +27,11 @@
     font-size: 1.125rem;
     margin-top: 1em;
     align-self: center;
-  }
+}
   
-  #search-page-btn:hover {
-    background-color: #BADA55;
-  }
+#search-page-btn:hover {
+    background-color: #7CC6FE;
+}
 
 .search-form {
     display: flex;
@@ -33,6 +39,10 @@
     min-width: 75%;
 }
 
-@media screen and (min-width: 420px) {
-
+@media screen and (min-width: 490px) {
+    .results-section {
+        padding: 1rem;
+        display: grid;
+        align-items: center;
+    }
 }

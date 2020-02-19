@@ -1,3 +1,8 @@
+/* 
+Not being used for now unless its decided to allow people to register
+and authenticate them
+*/
+
 .regis-form {
     padding: 2rem;
     display: flex;

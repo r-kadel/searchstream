@@ -4,7 +4,7 @@ import './Footer.css'
 function Footer() {
   return (
     <div className="footer">
-      <p>Designed by Ryan Kadel</p>
+      <p className="footer-p">Designed by Ryan Kadel</p>
     </div>
   )
 }
