@@ -7,10 +7,8 @@ import Footer from '../Footer/Footer'
 
 import Home from '../../pages/Home/Home'
 import LandingPage from '../../pages/Landing/LandingPage'
-import Register from '../../pages/Register/Register'
-import Catalogue from '../../pages/Catalogue/Catalogue'
 import Details from '../../pages/Details/Details'
-import Login from '../../pages/Login/Login'
+import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
 
 function App() {
@@ -24,18 +22,7 @@ function App() {
         <Route exact path='/'>
           <LandingPage />
         </Route>
-        <Route exact path="/search">
-          <Home />
-        </Route>
-        <Route path='/register'>
-          <Register />
-        </Route>
-        <Route path='/login'>
-          <Login />
-        </Route>
-        <Route path='/catalogue'>
-          <Catalogue />
-        </Route>
+        <PrivateRoute exact path="/search" component={Home} /> 
         <Route path='/search/:searchId'>
           <Details />
         </Route>

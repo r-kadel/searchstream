@@ -4,9 +4,16 @@
 }
 
 main {
-  /* flex: 1 0 auto; */
   flex-grow: 1;
 }
 .footer {
   flex-shrink: 0;
+}
+
+.Error {
+  color: #CA1551;
+  font-family: Arial;
+  font-weight: bold;
+  display: block;
+  margin-top: 1em;
 }

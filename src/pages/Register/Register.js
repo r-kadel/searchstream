@@ -1,3 +1,8 @@
+/* 
+Not being used for now unless its decided to allow people to register
+and authenticate them
+*/
+
 import React from 'react'
 import './Register.css'
 import { useHistory } from 'react-router-dom'

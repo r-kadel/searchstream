@@ -1,11 +1,25 @@
 import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import './Header.css'
 import { Context } from '../../Context'
+import Login from '../Login/Login'
 
 function Header() {
-  const { loggedIn, logOut } = useContext(Context)
-  
+  const { loggedIn, logOut, showLogin, setShowLogin, setErrorMessage } = useContext(Context)
+  const history = useHistory()
+
+  function handleLoginBtn() {
+    setShowLogin(!showLogin)
+  }
+
+  function handleDemoBtn() {
+    if(!loggedIn) {
+      setErrorMessage('Please log in to continue')
+    } else {
+      history.push('/search')
+    }
+  }
+
   function handleLogOut() {
     logOut()
   }
@@ -16,23 +30,23 @@ function Header() {
         <Link to="/">SearchStream</Link>
       </i>
       <ul className="nav-links">
-        <li>
-          <Link to="/register">Register</Link>
-        </li>
         {!loggedIn && (
           <li>
-            <Link to="/login">Login</Link>
+            <button className="login-btn nav-btn" onClick={handleLoginBtn}>
+              Login
+            </button>
+            <div className="login-box">{showLogin && <Login />}</div>
           </li>
         )}
         {loggedIn && (
-          <li onClick={handleLogOut}>
-            <Link to="/">
-              Log Out
-            </Link>
+          <li className="logout-btn" onClick={handleLogOut}>
+            <Link to="/">Log Out</Link>
           </li>
         )}
         <li>
-          <Link to="/search">Demo</Link>
+          <button className="demo-btn nav-btn" onClick={handleDemoBtn}>
+            Demo
+          </button>
         </li>
       </ul>
     </nav>

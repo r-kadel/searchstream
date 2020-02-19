@@ -1,7 +1,9 @@
 .footer {
-  background-color: darkgrey;
-  height: 3rem;
+  background-color: #363732;
+  height: 2rem;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
+  color: #F4FAFF;
+  padding-right: .5em;
 }

@@ -3,7 +3,18 @@ html, body {
   margin: 0;
   padding: 0;
   font-size: 1.125rem;
+  color: #252A34;
 }
 
+a {
+  text-decoration: none;
+  font-weight: bold;
+  color:inherit;
+}
 
-
+a:hover 
+{
+     color:#7CC6FE; 
+     text-decoration:none; 
+     cursor:pointer;  
+}

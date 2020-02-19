@@ -1,5 +1,5 @@
 .content {
-  min-height: calc(100vh - 6.25rem);
+  min-height: calc(100vh - 5.25rem);
 }
 
 .landing-page {
@@ -12,5 +12,5 @@
 }
 
 #landing-page-btn:hover {
-  background-color: #BADA55;
+  background-color: #64E9EE;
 }

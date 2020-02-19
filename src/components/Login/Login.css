@@ -1,11 +1,13 @@
 .login-form {
-  padding: 2rem;
+  font-size: .8rem;
   display: flex;
   flex-direction: column;
+  padding: .5em;
+  align-items: flex-start;
 }
 
 .login-form > label {
-  margin-top: .3em;
+  margin-top: .5em;
   margin-bottom: .3em;
 }
 
@@ -13,12 +15,12 @@
   font-size: 1rem;
 }
 
-.login-btn {
-  margin-top: 1.5rem;
+.login-submit {
   width: 100px;
+  margin-top: .5em;
   align-self: center;
 }
 
-.login-btn:hover {
-  background-color: #BADA55;
+.login-submit:hover {
+  background-color: #7CC6FE;
 }
