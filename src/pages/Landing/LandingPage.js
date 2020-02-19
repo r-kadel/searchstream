@@ -24,10 +24,15 @@ function LandingPage() {
           locate the content you want, withought all the clutter of a
           traditional google search.
         </p>
-        <p>
-          To use our service you will need to log in, which can be done by using
-          the User Name: User and the Password: 1234
-        </p>
+        <ul className="setup-ul">
+          <li>
+            To use our service you will need to log in, which can be done by using
+          </li>
+          <li className="setup-li">
+            User Name: admin
+          </li>
+          <li className="setup-li">Password: 1234</li>
+        </ul>
         <button id="landing-page-btn" onClick={handleLandingButtonClick}>
           Try it out!
         </button>

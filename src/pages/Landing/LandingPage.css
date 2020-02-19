@@ -14,3 +14,12 @@
 #landing-page-btn:hover {
   background-color: #64E9EE;
 }
+
+.setup-ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.setup-li {
+  color: #7CC6FE;
+}

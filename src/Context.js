@@ -3,7 +3,7 @@ import TokenService from './services/token-service'
 import config from './config'
 
 const Context = React.createContext()
-// const BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://calm-cliffs-26137.herokuapp.com/api/search'
+const BASE_URL = config.API_ENDPOINT || 'https://calm-cliffs-26137.herokuapp.com/api/search'
 
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])
@@ -14,7 +14,7 @@ function ContextProvider(props) {
   const [errorMessage, setErrorMessage] = useState('')
 
   function logIn(credentials) {
-    fetch('http://localhost:8000/api/auth/login/', {
+    fetch(`${BASE_URL}/auth/login/`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -31,7 +31,6 @@ function ContextProvider(props) {
             })
       )
       .catch(err => {
-        console.log(err)
         setHasError(true)
         setErrorMessage(err.error)
       })
@@ -45,7 +44,7 @@ function ContextProvider(props) {
 
   function getSearchResults(searchTerm) {
     setHasSearched(true)
-    fetch(`http://localhost:8000/api/search/${searchTerm}`, {
+    fetch(`${BASE_URL}/search/${searchTerm}`, {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',

@@ -25,7 +25,7 @@ function Login() {
         <form className="login-form" onSubmit={handleSubmit}> 
           <label htmlFor="username">Username:</label>
             <input name="username" type="text" required />
-          <label htmlFor="password">Password</label>
+          <label htmlFor="password">Password:</label>
             <input name="password" type="password" required />
           <button className="login-submit">Submit</button>
         </form>
