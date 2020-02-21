@@ -14,11 +14,12 @@ function Login() {
       username: username.value,
       password: password.value
     }
-    logIn(credentials)
-    setHasError(false)
-    username.value =''
-    password.value =''
-    history.push('/search')
+    logIn(credentials, () => {
+      setHasError(false)
+      username.value =''
+      password.value =''
+      history.push('/search')
+    })
   }
 
   return (

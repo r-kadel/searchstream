@@ -18,3 +18,21 @@ a:hover
      text-decoration:none; 
      cursor:pointer;  
 }
+
+body {
+  font-family: 'Josefin Sans', 'Open Sans';
+}
+
+button {
+  font-family: 'Josefin Sans', 'Open Sans';
+  font-weight: bold;
+}
+
+@media screen and (min-width: 1200px) {
+  body {
+    font-size: 1.3rem;
+  }
+  .provider-icon {
+    min-width: 105px;
+  }
+}

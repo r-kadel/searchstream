@@ -3,7 +3,7 @@ import TokenService from './services/token-service'
 import config from './config'
 
 const Context = React.createContext()
-const BASE_URL = config.API_ENDPOINT || 'https://calm-cliffs-26137.herokuapp.com/api/search'
+const BASE_URL = 'http://localhost:8000/api' || 'https://calm-cliffs-26137.herokuapp.com/api/search'
 
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])
@@ -12,8 +12,9 @@ function ContextProvider(props) {
   const [showLogin, setShowLogin] = useState(false)
   const [hasError, setHasError] = useState(false)
   const [errorMessage, setErrorMessage] = useState('')
+  const [isLoading, setIsLoading] = useState(false)
 
-  function logIn(credentials) {
+  function logIn(credentials, cb) {
     fetch(`${BASE_URL}/auth/login/`, {
       method: 'POST',
       headers: {
@@ -28,6 +29,7 @@ function ContextProvider(props) {
           : res.json().then(res => {
               TokenService.saveAuthToken(res.authToken)
               setLoggedIn(true)
+              cb()
             })
       )
       .catch(err => {
@@ -43,7 +45,7 @@ function ContextProvider(props) {
   }
 
   function getSearchResults(searchTerm) {
-    setHasSearched(true)
+    setIsLoading(true)
     fetch(`${BASE_URL}/search/${searchTerm}`, {
       method: 'GET',
       headers: {
@@ -52,7 +54,11 @@ function ContextProvider(props) {
       }
     })
       .then(res => res.json())
-      .then(resJson => setSearchResults(resJson.results))
+      .then(resJson => {
+        setIsLoading(false)
+        setSearchResults(resJson.results)
+        setHasSearched(true)
+      })
       .catch(err => setErrorMessage(err.error))
   }
 
@@ -70,7 +76,10 @@ function ContextProvider(props) {
         hasError,
         setHasError,
         errorMessage,
-        setErrorMessage
+        setErrorMessage,
+        setHasSearched,
+        isLoading,
+        setIsLoading
       }}>
       {props.children}
     </Context.Provider>

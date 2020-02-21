@@ -4,21 +4,26 @@ import { Context } from '../../Context'
 import Result from '../../components/Result/Result'
 import SearchError from '../../components/ErrorBoundary/SearchError'
 import Error from '../../Utils/Error'
+import Loading from '../../components/Loading/Loading'
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('')
+ 
   const {
     searchResults,
     getSearchResults,
     hasSearched,
     hasError,
+    setHasSearched,
     setHasError,
     setErrorMessage,
-    errorMessage
+    errorMessage,
+    isLoading
   } = useContext(Context)
 
   function handleChange(e) {
     const { value } = e.target
+    setHasSearched(false)
     setSearchTerm(value)
   }
 
@@ -33,9 +38,10 @@ function Home() {
       setErrorMessage('Something went wrong, please log in again')
     }
     if (hasSearched && searchResults.length === 0) {
+      const badTerm = searchTerm
       setHasError(true)
       setErrorMessage(
-        `Sorry, we couldn't find any results for ${searchTerm}, please try again`
+        `Sorry, we couldn't find any results for ${badTerm}, please try again`
       )
     } else {
       setHasError(false)
@@ -48,26 +54,27 @@ function Home() {
   return (
     <SearchError>
       <main className="content">
-        {hasError && <Error message={errorMessage} />}
         <section className="search-wrapper">
           <h1>SearchStream</h1>
           <form onSubmit={handleSubmit} className="search-form">
-            <label htmlFor="search-bar">Enter your search here:</label>
+            <label className="search-bar-label" htmlFor="search-bar">Search for a show or movie</label>
             <input
               name="search-bar"
               className="search-bar"
               type="text"
               onChange={handleChange}
-              placeholder="ie. Inception"
+              placeholder="ie. Seinfeld"
               required
             />
             <button type="submit" id="search-page-btn">
               Search
             </button>
+            {hasError && <Error message={errorMessage} />}        
           </form>
         </section>
-
-        <section className="results-section">{results()}</section>
+        {isLoading? <Loading /> :
+          <section className="results-section">{results()}</section>       
+        }
       </main>
     </SearchError>
   )

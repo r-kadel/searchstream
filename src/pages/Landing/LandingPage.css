@@ -2,22 +2,35 @@
   min-height: calc(100vh - 5.25rem);
 }
 
+.welcome {
+  text-align: center;
+}
+
+.welcome-p {
+  text-align: left;
+}
+
 .landing-page {
   text-align: center;
   padding: 3rem;
+  max-width: 800px;
 }
 
 #landing-page-btn {
   font-size: 1.125rem;
+  cursor: pointer;
+  border-radius: .25em;
 }
 
 #landing-page-btn:hover {
-  background-color: #64E9EE;
+  background-color: #7CC6FE;
 }
 
 .setup-ul {
   list-style-type: none;
   padding: 0;
+  text-align: left;
+  padding: 0 3em ;
 }
 
 .setup-li {

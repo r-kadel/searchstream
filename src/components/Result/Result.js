@@ -17,12 +17,14 @@ function Result(props) {
 
   return (
     <article className="result-item">
-      <Link to={`/search/${props.data.id}`}>
-        <img className="poster" src={props.data.picture} alt="Movie Poster" />
-      </Link>
+      <div className="poster-div">
+        <Link to={`/search/${props.data.id}`}>
+          <img className="poster" src={props.data.picture} alt="Movie Poster" />
+        </Link>
+      </div>
       <section className="result-details">
         <Link to={`/search/${props.data.id}`}>
-          <h3 className="result-title">{props.data.name}</h3>
+            <h3 className="result-title">{props.data.name}</h3>
         </Link>
         <h6>Available Here:</h6>
         <p className="icons">{providerIcons}</p>

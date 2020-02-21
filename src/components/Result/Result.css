@@ -2,7 +2,10 @@
   max-width: 100%;
   margin-left: auto;
   max-height: 200px;
-  align-self: center;
+  align-self: stretch;
+  transition: 
+  transform 500ms cubic-bezier(.5, 0, .5, 1),
+  opacity 250ms linear;
 }
 
 .poster:hover {
@@ -10,6 +13,8 @@
   border-color: #7CC6FE;
   border-width: .2em;
   color: #7CC6FE;
+  transform: scale(1.2);
+  opacity: .95;
 }
 
 a.poster{
@@ -23,10 +28,12 @@ a.poster{
   display: flex;
   flex-direction: column;
   align-items: center;
+  
 }
 
 .result-details {
   text-align: center;
+  margin-left: 1em;
 }
 
 .icons {
@@ -37,6 +44,10 @@ a.poster{
   margin-bottom: .6rem;
 }
 
+.result-item +.result-item {
+  margin-top: 1.3em;
+}
+
 .provider-icon {
   max-width: 80px;
   max-height: 40px;
@@ -45,12 +56,12 @@ a.poster{
   filter: brightness(4);
 }
 
-.provider-icon:hover{
-  filter: hue-rotate(90deg)
-}
-
 .result-title {
   margin: .5rem;
+  margin-top: 1em;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .result-title:hover {
@@ -61,23 +72,29 @@ a.poster{
 }
 
 h6 {
-  margin: .2rem;
+  margin: .5rem;
+  font-size: .95rem;
 }
 
 @media screen and (min-width: 600px) {
   .provider-icon {
     max-width: 85px;
   }
-
-  .poster {
-    min-height: 80%;
-    min-width: 100%;
+  .result-title {
+    margin-top: .5em;
+    margin-bottom: 1em;
+  }
+  .poster-div {
+    height: 100%; 
+  }
+  .poster{
+    height: 100%;
   }
   .result-item {
     width: 100%;
     display: grid;
     grid-gap: 1rem;
-    grid-template-columns: 1fr 3fr;
+    grid-template-columns: 4fr 8fr;
   }
   .icons {
     margin-top: 1rem;
