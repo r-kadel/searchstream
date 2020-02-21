@@ -5,7 +5,13 @@ import { Context } from '../../Context'
 import Login from '../Login/Login'
 
 function Header() {
-  const { loggedIn, logOut, showLogin, setShowLogin, setErrorMessage } = useContext(Context)
+  const {
+    loggedIn,
+    logOut,
+    showLogin,
+    setShowLogin,
+    setErrorMessage
+  } = useContext(Context)
   const history = useHistory()
 
   function handleLoginBtn() {
@@ -13,7 +19,7 @@ function Header() {
   }
 
   function handleDemoBtn() {
-    if(!loggedIn) {
+    if (!loggedIn) {
       setErrorMessage('Please log in to continue')
     } else {
       history.push('/search')

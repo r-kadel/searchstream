@@ -5,16 +5,23 @@ import Error from '../../Utils/Error'
 import { useHistory } from 'react-router-dom'
 
 function LandingPage() {
-  const { loggedIn, showLogin, setErrorMessage, setShowLogin, hasError, setHasError, errorMessage } = useContext(Context)
+  const {
+    loggedIn,
+    showLogin,
+    setErrorMessage,
+    setShowLogin,
+    hasError,
+    setHasError,
+    errorMessage
+  } = useContext(Context)
   const history = useHistory()
-  
+
   function handleLandingButtonClick() {
     if (!loggedIn) {
       setHasError(true)
-      setErrorMessage("Please log in to continue")
+      setErrorMessage('Please log in to continue')
       setShowLogin(!showLogin)
-    }
-    else {
+    } else {
       history.push('/search')
     }
   }
@@ -31,11 +38,10 @@ function LandingPage() {
         </p>
         <ul className="setup-ul">
           <li>
-            To use our service you will need to log in, which can be done by using
+            To use our service you will need to log in, which can be done by
+            using
           </li>
-          <li className="setup-li">
-            User Name: admin
-          </li>
+          <li className="setup-li">User Name: admin</li>
           <li className="setup-li">Password: 1234</li>
         </ul>
         <button id="landing-page-btn" onClick={handleLandingButtonClick}>

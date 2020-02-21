@@ -9,13 +9,18 @@ function Details() {
   let movie = {}
 
   searchResults.forEach(result => {
-    if(result.id === params.searchId) {
+    if (result.id === params.searchId) {
       movie = result
-    } 
+    }
   })
   const providerIcons = movie.locations.map(loc => {
     return (
-      <img key={loc.id} className="provider-icon" src={loc.icon} alt= {loc.display_name} />
+      <img
+        key={loc.id}
+        className="provider-icon"
+        src={loc.icon}
+        alt={loc.display_name}
+      />
     )
   })
 

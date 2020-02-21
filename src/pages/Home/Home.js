@@ -8,7 +8,7 @@ import Loading from '../../components/Loading/Loading'
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('')
- 
+
   const {
     searchResults,
     getSearchResults,
@@ -57,7 +57,9 @@ function Home() {
         <section className="search-wrapper">
           <h1>SearchStream</h1>
           <form onSubmit={handleSubmit} className="search-form">
-            <label className="search-bar-label" htmlFor="search-bar">Search for a show or movie</label>
+            <label className="search-bar-label" htmlFor="search-bar">
+              Search for a show or movie
+            </label>
             <input
               name="search-bar"
               className="search-bar"
@@ -69,12 +71,14 @@ function Home() {
             <button type="submit" id="search-page-btn">
               Search
             </button>
-            {hasError && <Error message={errorMessage} />}        
+            {hasError && <Error message={errorMessage} />}
           </form>
         </section>
-        {isLoading? <Loading /> :
-          <section className="results-section">{results()}</section>       
-        }
+        {isLoading ? (
+          <Loading />
+        ) : (
+          <section className="results-section">{results()}</section>
+        )}
       </main>
     </SearchError>
   )

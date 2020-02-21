@@ -3,7 +3,7 @@ import TokenService from './services/token-service'
 import config from './config'
 
 const Context = React.createContext()
-const BASE_URL = 'http://localhost:8000/api' || 'https://calm-cliffs-26137.herokuapp.com/api/search'
+const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api'
 
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])

@@ -10,7 +10,7 @@ function Result(props) {
         key={loc.id}
         className="provider-icon"
         alt={loc.display_name}
-        onError={(e) => e.target.style.display = "none"}
+        onError={e => (e.target.style.display = 'none')}
       />
     )
   })
@@ -24,7 +24,7 @@ function Result(props) {
       </div>
       <section className="result-details">
         <Link to={`/search/${props.data.id}`}>
-            <h3 className="result-title">{props.data.name}</h3>
+          <h3 className="result-title">{props.data.name}</h3>
         </Link>
         <h6>Available Here:</h6>
         <p className="icons">{providerIcons}</p>

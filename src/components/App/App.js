@@ -10,25 +10,21 @@ import LandingPage from '../../pages/Landing/LandingPage'
 import Details from '../../pages/Details/Details'
 import PrivateRoute from '../PrivateRoute/PrivateRoute'
 
-
 function App() {
-
   return (
     <div className="App">
       <Header />
 
       <Switch>
-
-        <Route exact path='/'>
+        <Route exact path="/">
           <LandingPage />
         </Route>
-        <PrivateRoute exact path="/search" component={Home} /> 
-        <Route path='/search/:searchId'>
+        <PrivateRoute exact path="/search" component={Home} />
+        <Route path="/search/:searchId">
           <Details />
         </Route>
-
       </Switch>
-      
+
       <Footer />
     </div>
   )
