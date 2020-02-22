@@ -8,6 +8,8 @@ function Details() {
   const params = useParams()
   let movie = {}
 
+  //match the correct movie from the results state
+  // and remap the icons
   searchResults.forEach(result => {
     if (result.id === params.searchId) {
       movie = result

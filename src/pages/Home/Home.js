@@ -27,11 +27,13 @@ function Home() {
     setSearchTerm(value)
   }
 
+  //Sends to API function in context
   function handleSubmit(e) {
     e.preventDefault()
     getSearchResults(searchTerm)
   }
 
+  //renders in result section either search results or appropriate error message
   const results = () => {
     if (!searchResults) {
       setHasError(true)

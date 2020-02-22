@@ -16,6 +16,7 @@ function LandingPage() {
   } = useContext(Context)
   const history = useHistory()
 
+  //User must log in to view the page
   function handleLandingButtonClick() {
     if (!loggedIn) {
       setHasError(true)

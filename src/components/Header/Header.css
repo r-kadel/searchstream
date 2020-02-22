@@ -69,7 +69,7 @@
   display: flex;
   flex-basis: 10px;
   align-items: center;
-  opacity: .9;
+  opacity: .95;
 }
 
 @media screen and (min-width: 420px) {

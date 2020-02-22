@@ -7,6 +7,7 @@
   color: #363732;
   padding-right: .5em;
   padding-left: .5em;
+  font-size: .9rem;
 }
 
 .footer-ul {
@@ -28,6 +29,7 @@
 @media screen and (min-width: 600px) {
   .footer{
     justify-content: flex-end;
+    font-size: 1.125rem;
   }
   .footer-p {
     margin-right: 2em;

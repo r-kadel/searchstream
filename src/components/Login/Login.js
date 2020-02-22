@@ -14,6 +14,8 @@ function Login() {
       username: username.value,
       password: password.value
     }
+    //Send user creds to logIn func in context for validation, then runs
+    //this arrow func as the callback to push to the home page
     logIn(credentials, () => {
       setHasError(false)
       username.value = ''

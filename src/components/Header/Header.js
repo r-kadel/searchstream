@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Link, useHistory } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import './Header.css'
 import { Context } from '../../Context'
 import Login from '../Login/Login'
@@ -10,20 +10,10 @@ function Header() {
     logOut,
     showLogin,
     setShowLogin,
-    setErrorMessage
   } = useContext(Context)
-  const history = useHistory()
 
   function handleLoginBtn() {
     setShowLogin(!showLogin)
-  }
-
-  function handleDemoBtn() {
-    if (!loggedIn) {
-      setErrorMessage('Please log in to continue')
-    } else {
-      history.push('/search')
-    }
   }
 
   function handleLogOut() {
@@ -49,11 +39,6 @@ function Header() {
             <Link to="/">Log Out</Link>
           </li>
         )}
-        <li>
-          <button className="demo-btn nav-btn" onClick={handleDemoBtn}>
-            Demo
-          </button>
-        </li>
       </ul>
     </nav>
   )
