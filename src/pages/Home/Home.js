@@ -5,7 +5,7 @@ import { Context } from '../../Context';
 import Result from '../../components/Result/Result';
 import Error from '../../Utils/Error';
 import Loading from '../../components/Loading/Loading';
-import TokenService from '../../services/token-service'
+import TokenService from '../../services/token-service';
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
@@ -24,13 +24,13 @@ function Home() {
   } = useContext(Context);
 
   // use effect hook to see if user has an auth token and render appropriately
-  useEffect( () => {
-    if(TokenService.hasAuthToken()) {
-      setLoggedIn(true)
+  useEffect(() => {
+    if (TokenService.hasAuthToken()) {
+      setLoggedIn(true);
     } else {
-      history.pushState('/')
+      history.push('/');
     }
-  }, [history, setLoggedIn])
+  }, [history, setLoggedIn]);
 
   function handleChange(e) {
     const { value } = e.target;
