@@ -57,7 +57,9 @@ a.poster{
 }
 
 .provider-icon:hover {
-  filter: brightness(2);
+    transform: scale(1.2);
+    opacity: .95;
+    filter: brightness(2);
 }
 
 .result-title {
