@@ -18,7 +18,10 @@ function Header() {
   return (
     <nav className="navbar">
       <i className="logo">
-        <Link to="/">SearchStream</Link>
+        {loggedIn? 
+          <Link to="/search">SearchStream</Link> 
+          : <Link to="/">SearchStream</Link> 
+        }
       </i>
       <ul className="nav-links">
         {!loggedIn && (

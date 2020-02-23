@@ -3,12 +3,13 @@ import './LandingPage.css';
 import { Context } from '../../Context';
 import Error from '../../Utils/Error';
 import { useHistory } from 'react-router-dom';
+import TokenService from '../../services/token-service';
 import Loading from '../../components/Loading/Loading';
 
 function LandingPage() {
   const {
-    loggedIn,
     showLogin,
+    setLoggedIn,
     setErrorMessage,
     setShowLogin,
     hasError,
@@ -20,11 +21,12 @@ function LandingPage() {
 
   //User must log in to view the page
   function handleLandingButtonClick() {
-    if (!loggedIn) {
+    if (!TokenService.hasAuthToken()) {
       setHasError(true);
       setErrorMessage('Please log in to continue');
       setShowLogin(!showLogin);
     } else {
+      setLoggedIn(true)
       history.push('/search');
     }
   }
@@ -36,8 +38,8 @@ function LandingPage() {
         <p className="welcome-p">
           Tired of searching through hundreds of videos through your tens of
           video streaming services? SearchStream was designed for you to quickly
-          locate the content you want, withought all the clutter of a
-          traditional google search.
+          locate the content you want, without all the clutter of a traditional
+          google search.
         </p>
         <ul className="setup-ul">
           <li>

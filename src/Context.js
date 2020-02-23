@@ -3,7 +3,8 @@ import TokenService from './services/token-service';
 import config from './config';
 
 const Context = React.createContext();
-const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api';
+// const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api';
+const BASE_URL = 'http://localhost:8000/api'
 // base URL will need to change to http://localhost:8000/api for testing locally
 // Dont change anything else!
 function ContextProvider(props) {
@@ -66,10 +67,17 @@ function ContextProvider(props) {
       .catch(err => setErrorMessage(err.error));
   }
 
+  function sustainAuth() {
+    if(TokenService.hasAuthToken()) {
+      setLoggedIn(true)
+    }
+  }
+
   return (
     <Context.Provider
       value={{
         searchResults,
+        setLoggedIn,
         getSearchResults,
         loggedIn,
         logIn,
@@ -83,7 +91,8 @@ function ContextProvider(props) {
         setErrorMessage,
         setHasSearched,
         isLoading,
-        setIsLoading
+        setIsLoading,
+        sustainAuth
       }}>
       {props.children}
     </Context.Provider>

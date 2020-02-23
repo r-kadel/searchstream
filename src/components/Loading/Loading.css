@@ -2,6 +2,7 @@
   border: 16px solid #F4FAFF; 
   border-top: 16px solid #7CC6FE; 
   border-radius: 50%;
+  margin-top: 3em;
   width: 90px;
   height: 90px;
   animation: spin 2s linear infinite;

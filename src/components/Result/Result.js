@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function Result(props) {
   const providerIcons = props.data.locations.map(loc => {
     return (
-      <a key={loc.id} href={loc.url}>
+      <a key={loc.id} href={loc.url} target="_blank" rel="noopener noreferrer">
         <img
           src={loc.icon}
           key={loc.id}

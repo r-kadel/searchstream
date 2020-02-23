@@ -17,7 +17,7 @@ function Home() {
     setHasError,
     setErrorMessage,
     errorMessage,
-    isLoading
+    isLoading,
   } = useContext(Context);
 
   function handleChange(e) {

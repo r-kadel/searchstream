@@ -4,7 +4,7 @@
 ### Back end repo is available at https://github.com/r-kadel/searchstream-api
 
 
-Tired of searching through hundreds of videos through your tens of video streaming services? SearchStream was designed for you to quickly locate the content you want, withought all the clutter and wasted time in a traditional google search.
+Tired of searching through hundreds of videos through your tens of video streaming services? SearchStream was designed for you to quickly locate the content you want, without all the clutter and wasted time in a traditional google search.
 
 ![ScreenShot](./public/screenshots/searchstream_landing.png)
 ![ScreenShot](./public/screenshots/searchstream.png)
