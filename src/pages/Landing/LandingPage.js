@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import './LandingPage.css';
 import { Context } from '../../Context';
 import Error from '../../Utils/Error';
@@ -18,6 +18,14 @@ function LandingPage() {
     isLoading
   } = useContext(Context);
   const history = useHistory();
+  // use effect hook to see if user has an auth token and render appropriately
+  useEffect(() => {
+    if (TokenService.hasAuthToken()) {
+      setLoggedIn(true);
+    } else {
+      history.pushState('/');
+    }
+  }, [history, setLoggedIn]);
 
   //User must log in to view the page
   function handleLandingButtonClick() {
@@ -26,7 +34,7 @@ function LandingPage() {
       setErrorMessage('Please log in to continue');
       setShowLogin(!showLogin);
     } else {
-      setLoggedIn(true)
+      setLoggedIn(true);
       history.push('/search');
     }
   }

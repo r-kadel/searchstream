@@ -1,13 +1,15 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import './Home.css';
+import { useHistory } from 'react-router-dom';
 import { Context } from '../../Context';
 import Result from '../../components/Result/Result';
 import Error from '../../Utils/Error';
 import Loading from '../../components/Loading/Loading';
+import TokenService from '../../services/token-service'
 
 function Home() {
   const [searchTerm, setSearchTerm] = useState('');
-
+  const history = useHistory();
   const {
     searchResults,
     getSearchResults,
@@ -18,7 +20,17 @@ function Home() {
     setErrorMessage,
     errorMessage,
     isLoading,
+    setLoggedIn
   } = useContext(Context);
+
+  // use effect hook to see if user has an auth token and render appropriately
+  useEffect( () => {
+    if(TokenService.hasAuthToken()) {
+      setLoggedIn(true)
+    } else {
+      history.pushState('/')
+    }
+  }, [history, setLoggedIn])
 
   function handleChange(e) {
     const { value } = e.target;
