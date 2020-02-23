@@ -2,7 +2,6 @@ import React, { useState, useContext } from 'react'
 import './Home.css'
 import { Context } from '../../Context'
 import Result from '../../components/Result/Result'
-import SearchError from '../../components/ErrorBoundary/SearchError'
 import Error from '../../Utils/Error'
 import Loading from '../../components/Loading/Loading'
 
@@ -54,7 +53,6 @@ function Home() {
   }
 
   return (
-    <SearchError>
       <main className="content">
         <section className="search-wrapper">
           <h1>SearchStream</h1>
@@ -82,7 +80,6 @@ function Home() {
           <section className="results-section">{results()}</section>
         )}
       </main>
-    </SearchError>
   )
 }
 

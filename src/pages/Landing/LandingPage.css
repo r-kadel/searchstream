@@ -30,9 +30,15 @@
   list-style-type: none;
   padding: 0;
   text-align: left;
-  padding: 0 3em ;
+  padding: 0 1.5em ;
 }
 
 .setup-li {
   color: #7CC6FE;
+}
+
+@media screen and (min-width: 400px) {
+  .setup-ul {
+    padding: 0 3em ;
+  }
 }

@@ -1,16 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Header from './Header'
+import Login from './Login'
 import { BrowserRouter } from 'react-router-dom'
 import { Context, ContextProvider } from '../../Context'
 
-describe('<Header />', () => {
+describe('<Login />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div')
     ReactDOM.render(
       <ContextProvider value={Context}>
         <BrowserRouter>
-          <Header />
+          <Login />
         </BrowserRouter>
       </ContextProvider>,
       div

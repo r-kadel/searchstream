@@ -1,10 +1,20 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-// import { Context } from '../../Context'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from './App'
+import { BrowserRouter } from 'react-router-dom'
+import { Context, ContextProvider } from '../../Context'
 
-// it('renders without crashing', () => {
-//   const div = document.createElement('div');
-//   ReactDOM.render(<App />, div);
-//   ReactDOM.unmountComponentAtNode(div);
-// });
+describe('<App />', () => {
+  it('renders without crashing', () => {
+    const div = document.createElement('div')
+    ReactDOM.render(
+      <ContextProvider value={Context}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ContextProvider>,
+      div
+    )
+    ReactDOM.unmountComponentAtNode(div)
+  })
+})

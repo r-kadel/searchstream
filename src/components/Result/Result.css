@@ -56,6 +56,10 @@ a.poster{
   filter: brightness(4);
 }
 
+.provider-icon:hover {
+  filter: brightness(2);
+}
+
 .result-title {
   margin: .5rem;
   margin-top: 1em;

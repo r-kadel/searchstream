@@ -3,8 +3,9 @@ import TokenService from './services/token-service'
 import config from './config'
 
 const Context = React.createContext()
-const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api'
-
+// const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api'
+const BASE_URL = 'http://localhost:8000/api'
+// base URL will need to change to http://localhost:8000/api for testing locally
 function ContextProvider(props) {
   const [searchResults, setSearchResults] = useState([])
   const [loggedIn, setLoggedIn] = useState(false)
@@ -15,6 +16,7 @@ function ContextProvider(props) {
   const [isLoading, setIsLoading] = useState(false)
 
   function logIn(credentials, cb) {
+    setIsLoading(true)
     fetch(`${BASE_URL}/auth/login/`, {
       method: 'POST',
       headers: {
@@ -35,8 +37,10 @@ function ContextProvider(props) {
       .catch(err => {
         setHasError(true)
         setErrorMessage(err.error)
+        setIsLoading(false)
       })
     setShowLogin(false)
+    setErrorMessage('')
   }
 
   function logOut() {

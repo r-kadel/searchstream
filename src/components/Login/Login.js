@@ -4,7 +4,7 @@ import { Context } from '../../Context'
 import { useHistory } from 'react-router-dom'
 
 function Login() {
-  const { logIn, setHasError } = useContext(Context)
+  const { logIn, setHasError, setIsLoading } = useContext(Context)
   const history = useHistory()
 
   function handleSubmit(e) {
@@ -18,6 +18,7 @@ function Login() {
     //this arrow func as the callback to push to the home page
     logIn(credentials, () => {
       setHasError(false)
+      setIsLoading(false)
       username.value = ''
       password.value = ''
       history.push('/search')

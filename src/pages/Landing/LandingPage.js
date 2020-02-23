@@ -3,6 +3,7 @@ import './LandingPage.css'
 import { Context } from '../../Context'
 import Error from '../../Utils/Error'
 import { useHistory } from 'react-router-dom'
+import Loading from '../../components/Loading/Loading'
 
 function LandingPage() {
   const {
@@ -12,7 +13,8 @@ function LandingPage() {
     setShowLogin,
     hasError,
     setHasError,
-    errorMessage
+    errorMessage,
+    isLoading
   } = useContext(Context)
   const history = useHistory()
 
@@ -48,7 +50,8 @@ function LandingPage() {
         <button id="landing-page-btn" onClick={handleLandingButtonClick}>
           Try it out!
         </button>
-        {hasError && <Error message={errorMessage} />}
+        {isLoading && <Loading />}
+        {hasError && !isLoading ? <Error message={errorMessage} /> : null}
       </div>
     </main>
   )
