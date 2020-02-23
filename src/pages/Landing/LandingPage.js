@@ -23,7 +23,7 @@ function LandingPage() {
     if (TokenService.hasAuthToken()) {
       setLoggedIn(true);
     } else {
-      history.pushState('/');
+      history.push('/');
     }
   }, [history, setLoggedIn]);
 
