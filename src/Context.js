@@ -3,8 +3,7 @@ import TokenService from './services/token-service';
 import config from './config';
 
 const Context = React.createContext();
-// const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api';
-const BASE_URL = 'http://localhost:8000/api'
+const BASE_URL = 'https://calm-cliffs-26137.herokuapp.com/api';
 // base URL will need to change to http://localhost:8000/api for testing locally
 // Dont change anything else!
 function ContextProvider(props) {
