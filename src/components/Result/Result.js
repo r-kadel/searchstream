@@ -3,7 +3,6 @@ import './Result.css';
 import { Link } from 'react-router-dom';
 
 function Result(props) {
-  console.log(props);
   const providerIcons = props.data.locations.map(loc => {
     return (
       <a key={loc.id} href={loc.url}>
