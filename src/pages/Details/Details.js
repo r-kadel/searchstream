@@ -23,7 +23,7 @@ function Details() {
     });
     providerIcons = movie.locations.map(loc => {
       return (
-        <a key={loc.id} href={loc.url}>
+        <a key={loc.id} href={loc.url} target="_blank" rel="noopener noreferrer">
           <img
             key={loc.id}
             className="provider-icon"
