@@ -97,6 +97,7 @@ h6 {
   }
   .poster{
     height: 100%;
+    margin-left: .5em;
   }
   .result-item {
     width: 100%;
@@ -106,5 +107,12 @@ h6 {
   }
   .icons {
     margin-top: 1rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .provider-icon {
+    margin-left: 1em;
+    margin-right: 1em;
   }
 }
