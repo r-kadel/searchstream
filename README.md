@@ -45,6 +45,7 @@ The API is built in node.js and is an express server. It uses knex to work with 
     outputs a json response(200) which is sent to the client to be stored as an array of movie/show objects
 
   /api/auth
+
   This is the authentication route with only one endpoint, a user post request with credentials that are validated against the username and password stored on the server. If sucessful the server sends a 200 response code and a JWT to the client to validate access to the search endpoint
   
     post('/login')
@@ -69,6 +70,7 @@ The API is built in node.js and is an express server. It uses knex to work with 
   The users end point is used internally to set up, edit, and get data from the database and is not for public use. It allows for adding users to the database, editing their information, deleting or viewing all of the stored users
 
   /api/users
+
    .route('/')
     .get('returns all users in the database)
 
@@ -89,6 +91,7 @@ The API is built in node.js and is an express server. It uses knex to work with 
       }
 
   /api/users/:userId
+  
     .route('/:user_id')
         .get(id) 
           gets the data for the user with the specified id from the requested ID in the endpoint and returns it
