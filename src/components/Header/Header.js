@@ -1,23 +1,18 @@
-import React, { useContext } from 'react'
-import { Link } from 'react-router-dom'
-import './Header.css'
-import { Context } from '../../Context'
-import Login from '../Login/Login'
+import React, { useContext } from 'react';
+import { Link } from 'react-router-dom';
+import './Header.css';
+import { Context } from '../../Context';
+import Login from '../Login/Login';
 
 function Header() {
-  const {
-    loggedIn,
-    logOut,
-    showLogin,
-    setShowLogin,
-  } = useContext(Context)
+  const { loggedIn, logOut, showLogin, setShowLogin } = useContext(Context);
 
   function handleLoginBtn() {
-    setShowLogin(!showLogin)
+    setShowLogin(!showLogin);
   }
 
   function handleLogOut() {
-    logOut()
+    logOut();
   }
 
   return (
@@ -41,7 +36,7 @@ function Header() {
         )}
       </ul>
     </nav>
-  )
+  );
 }
 
-export default Header
+export default Header;

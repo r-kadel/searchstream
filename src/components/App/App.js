@@ -1,14 +1,14 @@
-import React from 'react'
-import { Switch, Route } from 'react-router-dom'
+import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 
-import './App.css'
-import Header from '../Header/Header'
-import Footer from '../Footer/Footer'
+import './App.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
-import Home from '../../pages/Home/Home'
-import LandingPage from '../../pages/Landing/LandingPage'
-import Details from '../../pages/Details/Details'
-import PrivateRoute from '../PrivateRoute/PrivateRoute'
+import Home from '../../pages/Home/Home';
+import LandingPage from '../../pages/Landing/LandingPage';
+import Details from '../../pages/Details/Details';
+import PrivateRoute from '../PrivateRoute/PrivateRoute';
 
 function App() {
   return (
@@ -27,7 +27,7 @@ function App() {
 
       <Footer />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

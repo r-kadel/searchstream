@@ -1,16 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Home from './Home';
+import Error from './Error';
 import { BrowserRouter } from 'react-router-dom';
-import { Context, ContextProvider } from '../../Context';
+import { ContextProvider } from '../Context';
 
-describe('<Home />', () => {
+describe('<Error />', () => {
   it('renders without crashing', () => {
     const div = document.createElement('div');
     ReactDOM.render(
-      <ContextProvider value={Context}>
+      <ContextProvider value={hasError}>
         <BrowserRouter>
-          <Home />
+          <Error />
         </BrowserRouter>
       </ContextProvider>,
       div
@@ -18,3 +18,5 @@ describe('<Home />', () => {
     ReactDOM.unmountComponentAtNode(div);
   });
 });
+
+const hasError = true;

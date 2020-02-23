@@ -1,9 +1,9 @@
-import React from 'react'
-import './Result.css'
-import { Link } from 'react-router-dom'
+import React from 'react';
+import './Result.css';
+import { Link } from 'react-router-dom';
 
 function Result(props) {
-  console.log(props)
+  console.log(props);
   const providerIcons = props.data.locations.map(loc => {
     return (
       <a key={loc.id} href={loc.url}>
@@ -15,10 +15,9 @@ function Result(props) {
           onError={e => (e.target.style.display = 'none')}
         />
       </a>
-    )
-  })
+    );
+  });
 
-  
   return (
     <article className="result-item">
       <div className="poster-div">
@@ -34,7 +33,7 @@ function Result(props) {
         <p className="icons">{providerIcons}</p>
       </section>
     </article>
-  )
+  );
 }
 
-export default Result
+export default Result;

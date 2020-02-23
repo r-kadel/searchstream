@@ -1,9 +1,9 @@
-import React, { useContext } from 'react'
-import './LandingPage.css'
-import { Context } from '../../Context'
-import Error from '../../Utils/Error'
-import { useHistory } from 'react-router-dom'
-import Loading from '../../components/Loading/Loading'
+import React, { useContext } from 'react';
+import './LandingPage.css';
+import { Context } from '../../Context';
+import Error from '../../Utils/Error';
+import { useHistory } from 'react-router-dom';
+import Loading from '../../components/Loading/Loading';
 
 function LandingPage() {
   const {
@@ -15,17 +15,17 @@ function LandingPage() {
     setHasError,
     errorMessage,
     isLoading
-  } = useContext(Context)
-  const history = useHistory()
+  } = useContext(Context);
+  const history = useHistory();
 
   //User must log in to view the page
   function handleLandingButtonClick() {
     if (!loggedIn) {
-      setHasError(true)
-      setErrorMessage('Please log in to continue')
-      setShowLogin(!showLogin)
+      setHasError(true);
+      setErrorMessage('Please log in to continue');
+      setShowLogin(!showLogin);
     } else {
-      history.push('/search')
+      history.push('/search');
     }
   }
 
@@ -54,7 +54,7 @@ function LandingPage() {
         {hasError && !isLoading ? <Error message={errorMessage} /> : null}
       </div>
     </main>
-  )
+  );
 }
 
-export default LandingPage
+export default LandingPage;
