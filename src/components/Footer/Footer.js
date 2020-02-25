@@ -15,7 +15,10 @@ function Footer() {
           </a>
         </li>
         <li className="footer-icon">
-          <a href="mailto:ryan.kadel@yahoo.com?Subject=From%20SearchStream">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="mailto:ryan.kadel@yahoo.com?Subject=From%20SearchStream">
             <i className="fas fa-envelope"></i>
           </a>
         </li>
