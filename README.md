@@ -13,7 +13,7 @@ Tired of searching through hundreds of videos through your tens of video streami
 A user logs in to their account and is immediately able to search for any TV show or movie they can think of. If we can't find it we will let you know, otherwise you get a list of possible streaming service providers that you can use to watch your favorite movies or shows!
 
 This is a full stack web application that uses React and custom vanilla CSS on the front end to deliver a fast and accessible user experience.
-On the back end node.js using an express server handle the routing and API and and a postgresql database stores the users log in information. 
+On the back end node.js using an express server handle the routing and API and a postgresql database stores the users log in information. 
 JWT is used to authenticate and validate users to ensure the security of our users personal information.
 
 The API is powered by Heroku and is set up to take POST requests from the client and validate them against the user data stored in the postgresql database. If the request is sucessful and validated by the server a JWT token is sent to the client allowing them to access the main app and the search endpoint. 
