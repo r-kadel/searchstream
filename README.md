@@ -1,6 +1,6 @@
 ## SearchStream - Content Search by platform
 
-### Available at https://searchstream.r-kadel.now.sh/
+### Available at https://searchstream.now.sh/
 ### Back end repo is available at https://github.com/r-kadel/searchstream-api
 
 
